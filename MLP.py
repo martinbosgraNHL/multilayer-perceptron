@@ -261,6 +261,10 @@ class MLP:
                      feed_dict=test_feed_dict)
         print('{:0.0f}% - loss: {:0.4f}, acc: {:0.4f}, val_loss: {:0.4f}, val_acc: {:0.4f}'.format(
             step / steps * 100.0, step_loss, train_accuracy, test_loss, test_accuracy))
+        cursor_up = '\x1b[1A'
+        clear_line = '\x1b[2K'
+        sys.stdout.write(cursor_up)
+        sys.stdout.write(clear_line)
 
         train_writer.add_summary(train_summary, global_step=step)
         test_writer.add_summary(test_summary, step)

@@ -109,9 +109,9 @@ The hyper-parameters used in the experiment were assigned by hand, not through h
 
 The optimization algorithm used for this implementation of MLP was [stochastic gradient descent (SGD)](https://en.wikipedia.org/wiki/Stochastic_gradient_descent).
 
-Before training and testing, the dataset was standardized using the `sklearn.preprocessing.StandardScaler().fit_transform()` function.
+Before training and validating, the dataset was standardized using the `sklearn.preprocessing.StandardScaler().fit_transform()` function.
 
-The graph below summarizes the training and testing results. The training accuracy and loss are red and blue, while the validation accuracy and loss are green and yellow.
+The graph below summarizes the training and validating results. The training accuracy and loss are red and blue, while the validation accuracy and loss are green and yellow.
 
 ![](figures/training_and_testing_results.png)
 
