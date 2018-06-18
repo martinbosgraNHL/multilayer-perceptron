@@ -67,7 +67,7 @@ You may opt to use `tensorflow-gpu` instead of `tensorflow`, it's entirely your 
 First, clone the project.
 
 ```buildoutcfg
-~$ git clone https://github.com/AFAgarap/multilayer-perceptron.git/
+~$ git clone https://github.com/martinbosgraNHL/multilayer-perceptron.git/
 ```
 
 Program parameters
@@ -104,7 +104,7 @@ The hyper-parameters used in the experiment were assigned by hand, not through h
 |---------------|------|
 |BATCH_SIZE|200|
 |EPOCHS|10000|
-|LEARNING_RATE|1e-2|
+|LEARNING_RATE|2e-3|
 |NODES|500-500-500|
 
 The optimization algorithm used for this implementation of MLP was [stochastic gradient descent (SGD)](https://en.wikipedia.org/wiki/Stochastic_gradient_descent).
@@ -117,24 +117,9 @@ The graph below summarizes the training and testing results. The training accura
 
 The following is the truncated output of training loss and training accuracy for the MLP implementation:
 ```buildoutcfg
-step [100] train -- loss : 0.620643138885498, accuracy : 0.7000000476837158
-step [200] train -- loss : 0.6305786371231079, accuracy : 0.675000011920929
-step [300] train -- loss : 0.6312072277069092, accuracy : 0.6666667461395264
-...
-step [22600] train -- loss : 0.007517226040363312, accuracy : 1.0
-step [22700] train -- loss : 0.008925976231694221, accuracy : 1.0
-EOF -- Training done at step 22749
-```
-
-The following is the truncated testing loss and testing accuracy for the MLP implementation:
-```buildoutcfg
-step [100] test -- loss : 0.15268392860889435, accuracy : 0.984375
-step [200] test -- loss : 0.6760536432266235, accuracy : 0.9285714626312256
-step [300] test -- loss : 0.14311110973358154, accuracy : 0.9743589758872986
-...
-step [5500] test -- loss : 0.11166846007108688, accuracy : 0.9799999594688416
-step [5600] test -- loss : 0.19539757072925568, accuracy : 0.9799999594688416
-```
+22% - loss: 0.0630, acc: 0.9867, val_loss: 0.0957, val_acc: 0.9649
+23% - loss: 0.0569, acc: 0.9824, val_loss: 0.0946, val_acc: 0.9649
+24% - loss: 0.0764, acc: 0.9684, val_loss: 0.0934, val_acc: 0.9649
 
 You can get the following summary of classification statistics by using the module `utils.py`
 
