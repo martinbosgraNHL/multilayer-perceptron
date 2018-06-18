@@ -111,7 +111,7 @@ The optimization algorithm used for this implementation of MLP was [stochastic g
 
 Before training and testing, the dataset was standardized using the `sklearn.preprocessing.StandardScaler().fit_transform()` function.
 
-The graph below summarizes the training and testing results. The training accuracy and loss are in color blue, while the testing accuracy and loss are in color red.
+The graph below summarizes the training and testing results. The training accuracy and loss are red and blue, while the validation accuracy and loss are green and yellow.
 
 ![](figures/training_and_testing_results.png)
 
