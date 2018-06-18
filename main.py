@@ -22,18 +22,14 @@ __version__ = '0.1'
 __author__ = 'Abien Fred Agarap'
 
 import argparse
+from argparse import Namespace
 import MLP
 from sklearn import datasets
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
-BATCH_SIZE = 200
-LEARNING_RATE = 1e-2
-NUM_CLASSES = 2
-NUM_NODES = [500, 500, 500]
 
-
-def parse_args():
+def parse_args() -> Namespace:
     parser = argparse.ArgumentParser(
         description='MLP written using TensorFlow, for Wisconsin Breast Cancer Diagnostic Dataset')
     group = parser.add_argument_group('Arguments')
@@ -47,7 +43,11 @@ def parse_args():
     return arguments
 
 
-def main(arguments):
+def main(arguments: Namespace) -> None:
+    batch_size = 200
+    learning_rate = 2e-3
+    num_classes = 2
+    num_nodes = [500, 500, 500]
 
     # load the features of the dataset
     features = datasets.load_breast_cancer().data
@@ -64,7 +64,7 @@ def main(arguments):
     train_features, test_features, train_labels, test_labels = train_test_split(features, labels, test_size=0.20,
                                                                                 stratify=labels)
 
-    model = MLP.MLP(alpha=LEARNING_RATE, batch_size=BATCH_SIZE, node_size=NUM_NODES, num_classes=NUM_CLASSES,
+    model = MLP.MLP(alpha=learning_rate, batch_size=batch_size, node_size=num_nodes, num_classes=num_classes,
                     num_features=num_features)
 
     model.train(num_epochs=arguments.num_epochs, log_path=arguments.log_path, train_data=[train_features, train_labels],
